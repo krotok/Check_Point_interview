@@ -6,7 +6,7 @@
 # python -m playwright install
 
 **Tests runs**
-# pytest -n auto --browser=chromium
-# pytest -n auto --browser=firefox
-# pytest -n auto --browser=webkit
+# pytest -n auto --browser=chromium --html=reports\report_chromium.html --self-contained-html
+# pytest -n auto --browser=firefox --html=reports\report_firefox.html --self-contained-html
+# pytest -n auto --browser=webkit --html=reports\report_webkit.html --self-contained-html
 
