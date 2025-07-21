@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Gmail Login</title>
+</head>
+<body>
+    <h1>Gmail Login</h1>
+    <form id="loginForm">
+        <label>Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <label>Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="submit">Login</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var message = document.getElementById('message');
+
+            if (!email || !password) {
+                message.textContent = 'Fields cannot be empty';
+            } else if (!email.includes('@')) {
+                message.textContent = 'Invalid email format';
+            } else if (email === 'test@gmail.com' && password === 'password123') {
+                message.textContent = 'Login successful';
+            } else {
+                message.textContent = 'Invalid credentials';
+            }
+        });
+    </script>
+</body>
+</html>
