@@ -57,7 +57,7 @@ pipeline {
                             dir("${PROJECT_DIR}") {
                                 sh """
                                     source ${VENV_DIR}/bin/activate
-                                    pytest --browser=${browser} --html=reports/${reportFile} --self-contained-html
+                                    pytest -n auto --browser=${browser} --html=reports/${reportFile} --self-contained-html
                                 """
                             }
                     }
